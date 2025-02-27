@@ -1,1 +1,215 @@
-мында пихать ет
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yerassyl Bolatkhan - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background: #34495e;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+            background: white;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode section {
+            background: #333;
+            color: white;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            width: 45%;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        body.dark-mode .project {
+            background: #444;
+            border: 1px solid #666;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .controls {
+            margin-top: 10px;
+        }
+
+        .controls button {
+            background: #34495e;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .controls button:hover {
+            background: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="name">Yerassyl Bolatkhan</h1>
+        <p id="subtitle">Student | Biology Olympiad</p>
+        
+        <div class="controls">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('ru')">Русский</button>
+            <button onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about" id="nav-about">About</a></li>
+            <li><a href="#skills" id="nav-skills">Skills</a></li>
+            <li><a href="#projects" id="nav-projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2 id="about-title">About Me</h2>
+        <p id="about-text">I am Yerassyl Bolatkhan, a dedicated student with a strong passion for biology. I actively participate in Biology Olympiads, constantly expanding my knowledge in life sciences.</p>
+    </section>
+
+    <section id="skills">
+        <h2 id="skills-title">Skills</h2>
+        <ul id="skills-list">
+            <li>Biology (Cell Biology, Genetics, Biochemistry)</li>
+            <li>Scientific Research & Analysis</li>
+            <li>Problem-Solving</li>
+            <li>Critical Thinking</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2 id="projects-title">Projects</h2>
+        <div class="project">
+            <h3 id="project1-title">Biology Olympiad Preparation</h3>
+            <p id="project1-text">Engaged in extensive preparation for national and international biology competitions, focusing on advanced biological concepts and practical applications.</p>
+        </div>
+        <div class="project">
+            <h3 id="project2-title">Research on Enzyme Kinetics</h3>
+            <p id="project2-text">Conducted an independent study on enzyme reaction rates, exploring the effects of temperature and pH on enzymatic activity.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Yerassyl Bolatkhan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            const translations = {
+                en: {
+                    subtitle: "Student | Biology Olympiad",
+                    "nav-about": "About",
+                    "nav-skills": "Skills",
+                    "nav-projects": "Projects",
+                    "about-title": "About Me",
+                    "about-text": "I am Yerassyl Bolatkhan, a dedicated student with a strong passion for biology. I actively participate in Biology Olympiads, constantly expanding my knowledge in life sciences.",
+                    "skills-title": "Skills",
+                    "skills-list": `
+                        <li>Biology (Cell Biology, Genetics, Biochemistry)</li>
+                        <li>Scientific Research & Analysis</li>
+                        <li>Problem-Solving</li>
+                        <li>Critical Thinking</li>
+                    `,
+                    "projects-title": "Projects",
+                    "project1-title": "Biology Olympiad Preparation",
+                    "project1-text": "Engaged in extensive preparation for national and international biology competitions, focusing on advanced biological concepts and practical applications.",
+                    "project2-title": "Research on Enzyme Kinetics",
+                    "project2-text": "Conducted an independent study on enzyme reaction rates, exploring the effects of temperature and pH on enzymatic activity."
+                },
+                ru: {
+                    subtitle: "Студент | Биологическая олимпиада",
+                    "nav-about": "Обо мне",
+                    "nav-skills": "Навыки",
+                    "nav-projects": "Проекты",
+                    "about-title": "Обо мне",
+                    "about-text": "Я Ерaссыл Болатхан, увлеченный студент с большим интересом к биологии. Я активно участвую в биологических олимпиадах, постоянно расширяя свои знания в области наук о жизни.",
+                    "skills-title": "Навыки",
+                    "skills-list": `
+                        <li>Биология (Клеточная биология, Генетика, Биохимия)</li>
+                        <li>Научные исследования и анализ</li>
+                        <li>Решение проблем</li>
+                        <li>Критическое мышление</li>
+                    `,
+                    "projects-title": "Проекты",
+                    "project1-title": "Подготовка к биологической олимпиаде",
+                    "project1-text": "Активно готовлюсь к национальным и международным биологическим олимпиадам, изучая сложные биологические концепции и их практическое применение.",
+                    "project2-title": "Исследование кинетики ферментов",
+                    "project2-text": "Провел независимое исследование скорости ферментативных реакций, изучая влияние температуры и pH на активность ферментов."
+                }
+            };
+
+            for (const id in translations[lang]) {
+                if (id === "skills-list") {
+                    document.getElementById(id).innerHTML = translations[lang][id];
+                } else {
+                    document.getElementById(id).textContent = translations[lang][id];
+                }
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
